@@ -1,5 +1,5 @@
 //ESTMX001 JOB '${ACCT}','${PROGRAMMER}',CLASS=${CLASS},
-//             MSGCLASS=${MSGCLASS},SCHENV=${SCHENV},NOTIFY=${NOTIFY}
+//* ***    MSGCLASS=${MSGCLASS},SCHENV=${SCHENV},NOTIFY=${NOTIFY}
 //JOBLIB   DD DSN=${HLQ}.LOADLIB,DISP=SHR
 //*
 //STEP01   EXEC PGM=SORT
@@ -16,7 +16,7 @@
 //* das copias por ambiente dos JCLs reais - ver
 //* docs/ambiente-poc-azure.md.
 //*
-//SORTIN   DD DSN=${HLQ}.CLIENTES(0),
+SORTIN   DD DSN=${HLQ}.CLIENTES(0),
 //       DISP=SHR
 //SORTOUT  DD DSN=${HLQ}.CLIENTES(+1),
 //       DISP=(,CATLG,DELETE),
@@ -27,6 +27,7 @@
 //SYSOUT   DD SYSOUT=*
 //SYSIN    DD *
   SORT FIELDS=(1,10,CH,A)
+
   OUTREC BUILD=(1,80,C'*',81,209)
   END
 /*
