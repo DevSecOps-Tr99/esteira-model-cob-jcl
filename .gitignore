@@ -1,0 +1,11 @@
+# Saida local da esteira (render/report)
+build/
+reports/
+
+# Python
+__pycache__/
+.venv/
+
+# Editor
+.vscode/
+.idea/

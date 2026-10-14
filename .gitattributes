@@ -1,0 +1,5 @@
+# JCL e configuracao versionados como texto com fim de linha LF. Um JCL
+# real com bytes hexadecimais hard-coded (sinalizado pelo binary-guard da
+# esteira) deve ser marcado aqui individualmente como binario:
+#   jcl/NOMEDOJOB.jcl -text -diff
+* text=auto eol=lf

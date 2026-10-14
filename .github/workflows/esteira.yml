@@ -1,0 +1,30 @@
+name: Esteira JCL
+
+# Caller fino: toda a logica fica no workflow reutilizavel do repositorio
+# da esteira (DevSecOps-Tr99/esteira-model-cob). Este repositorio so guarda
+# os JCLs, os parametros por ambiente e a configuracao do GitHub
+# (Environments TU/TI/PRD, variables, secret e o runner self-hosted).
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop, "release/**", "hotfix/**"]
+  workflow_dispatch:
+    inputs:
+      ambiente:
+        description: "Ambiente de destino"
+        type: choice
+        options: [TU, TI, PRD]
+        default: TU
+      jcl:
+        description: "JCL (arquivo ou pasta) a publicar"
+        type: string
+        default: jcl/
+
+jobs:
+  esteira:
+    uses: DevSecOps-Tr99/esteira-model-cob/.github/workflows/jcl-pipeline.yml@main
+    with:
+      ambiente: ${{ inputs.ambiente }}
+      jcl: ${{ inputs.jcl || 'jcl/' }}
+    secrets: inherit
