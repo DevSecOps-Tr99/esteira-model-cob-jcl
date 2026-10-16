@@ -16,13 +16,13 @@
 //* das copias por ambiente dos JCLs reais - ver
 //* docs/ambiente-poc-azure.md.
 //*
-SORTIN   DD DSN=${HLQ}.CLIENTES(0),
+//SORTIN   DD DSN=${HLQ}.CLIENTES(0),
 //       DISP=SHR
 //SORTOUT  DD DSN=${HLQ}.CLIENTES(+1),
 //       DISP=(,CATLG,DELETE),
 //       UNIT=${UNIT},
 //       SPACE=(TRK,(${SPACE_PRIMARY},${SPACE_SECONDARY}),RLSE),
-//       DCB=(LRECL=0290,RECFM=FB),
+//       DCB=(LRECL=0291,RECFM=FB),
 //       DATACLAS=${DATACLAS}
 //SYSOUT   DD SYSOUT=*
 //SYSIN    DD *
