@@ -20,9 +20,9 @@
 //       DISP=SHR
 //SORTOUT  DD DSN=${HLQ}.CLIENTES(+1),
 //       DISP=(,CATLG,DELETE),
-//       UNIT=${UNIT},
 //       SPACE=(TRK,(${SPACE_PRIMARY},${SPACE_SECONDARY}),RLSE),
 //       DCB=(LRECL=0290,RECFM=FB),
+//       UNIT=${UNIT},
 //       DATACLAS=${DATACLAS}
 //SYSOUT   DD SYSOUT=*
 //SYSIN    DD *
